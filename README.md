@@ -22,7 +22,7 @@ npm install
 ### Run Commands
 
 This framework supports head mode, headless and CI/CD runs:
-
+* If running the commands below give you a `Cypress not installed` error, please run the command `npx cypress install` 
 #### Head mode
 ```
 npm test
