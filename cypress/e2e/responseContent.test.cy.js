@@ -80,7 +80,8 @@ describe('OpenWeatherMap API Call', () => {
 			expect(currentDateAndTime.getFullYear()).to.eq(dateNow.getFullYear());
 			expect(currentDateAndTime.getMonth()).to.eq(dateNow.getMonth());
 			expect(currentDateAndTime.getHours()).to.eq(dateNow.getHours());
-			expect(currentDateAndTime.getMinutes()).to.eq(dateNow.getMinutes());
+			// using "within" here due to minutes cound have change between the call and the javascropt new Date()
+			expect(currentDateAndTime.getMinutes()).to.be.within(dateNow.getMinutes()-1, dateNow.getMinutes()+1); 
 		});
 	});
 });
