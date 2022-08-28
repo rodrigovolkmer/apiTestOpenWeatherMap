@@ -6,6 +6,7 @@
 	"scripts": {
 		"test": "npx cypress open --e2e --browser chrome",
 		"headless": "npx cypress run --e2e --browser chrome",
+    "ci-cd": "npx cypress run --e2e -r junit",
 		"prettier": "prettier --write --loglevel warn \"**/**/*.js\" \"**/**/*.json\""
 	},
 	"repository": {
@@ -20,6 +21,7 @@
 	"homepage": "https://github.com/rodrigovolkmer/apiTestOpenWeatherMap#readme",
 	"devDependencies": {
 		"cypress": "^10.6.0",
+		"mocha-junit-reporter": "^2.0.2",
 		"prettier": "^2.7.1"
 	}
 }
