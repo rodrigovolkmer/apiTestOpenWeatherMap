@@ -4,8 +4,8 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
-		"test": "npx cypress open --e2e --browser chrome",
-		"headless": "npx cypress run --e2e --browser chrome",
+		"test": "npx cypress open --e2e",
+		"headless": "npx cypress run --e2e -r spec",
     "ci-cd": "npx cypress run --e2e -r junit",
 		"prettier": "prettier --write --loglevel warn \"**/**/*.js\" \"**/**/*.json\""
 	},

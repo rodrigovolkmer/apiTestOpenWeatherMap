@@ -1,34 +1,5 @@
-/**
- * ToDo
- * Tests:
- * - Different locations
- * - not excluding anything
- * - excluding daily / hourly / minutely
- * - response content for current and forcast
- * - values presented on the call
- * - units: standard / metric / imperial
- * - timezones
- * - Unix timestamp for date and time
- *
- *
- * Framework Structure:
- * - Cypress 10 - Done
- * - BaseUrl - done
- * - Page Objects - might be an overkill for this example
- * - Dynamic values from Fixture file
- * - API call from custom command
- * - data from fixture files
- * - using alias to reuse the response
- *
- *
- */
-
 describe('OpenWeatherMap API Call', () => {
-	/**
-	 * Using the webside https://www.latlong.net/
-	 * I've constructed the fixture's file with cities around Australia
-	 */
-
+	
 	describe('Testing Response Contents', () => {
 		beforeEach(() => {
 			// from the fixtures file, use Brisbane for this example
@@ -77,7 +48,7 @@ describe('OpenWeatherMap API Call', () => {
 
 		it('Response Content - Current Weather Data', function () {
 			// information provided
-			expect(this.response.body.current).to.have.keys(
+			expect(this.response.body.current).to.include.keys(
 				'dt',
 				'sunrise',
 				'sunset',
@@ -95,7 +66,7 @@ describe('OpenWeatherMap API Call', () => {
 			);
 
 			// information provided for Current Weather
-			expect(this.response.body.current.weather[0]).to.have.keys(
+			expect(this.response.body.current.weather[0]).to.include.keys(
 				'id',
 				'main',
 				'description',

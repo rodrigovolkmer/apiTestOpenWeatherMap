@@ -8,7 +8,7 @@ module.exports = defineConfig({
     requestTimeout: 20000,
     defaultCommandTimeout: 20000,
     pageLoadTimeout: 20000,
-    reporter: 'junit',
+    reporter: 'spec',
     reporterOptions: {
       mochaFile: 'cypress/results/test-results-[hash].xml',
       toConsole: true,

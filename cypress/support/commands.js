@@ -27,9 +27,7 @@
 /**
  * Call to OpenWeatherMap One Call API 3.0 as a custom command that can be accessible everywhere
  */
-Cypress.Commands.add(
-	'apiCallOpenWeatherMap',
-	(latitude, longitute, exclude, units ) => {
+Cypress.Commands.add('apiCallOpenWeatherMap', (latitude, longitute, exclude = null, units = 'standard' ) => {
 		cy.request({
 			url: '/data/3.0/onecall',
 			method: 'GET',
@@ -41,6 +39,7 @@ Cypress.Commands.add(
 				appid: Cypress.env('apiKey'),
 			},
 		}).then(response => {
+      expect(response.status).to.eq(200);
 			return response;
 		});
 	}
