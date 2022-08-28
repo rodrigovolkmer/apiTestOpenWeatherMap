@@ -25,20 +25,23 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 /**
- * 
+ * Call to OpenWeatherMap One Call API 3.0 as a custom command that can be accessible everywhere
  */
-Cypress.Commands.add('apiCallOpenWeatherMap', (latitude, longitute, exclude = '', units = 'standard') => { 
-  cy.request({
-			url: '/data/3.0/onecall', 
+Cypress.Commands.add(
+	'apiCallOpenWeatherMap',
+	(latitude, longitute, exclude, units ) => {
+		cy.request({
+			url: '/data/3.0/onecall',
 			method: 'GET',
 			qs: {
-				lat: latitude,
-				lon: longitute,
-				exclude: exclude,
-        units: units,
-				appid: Cypress.env('apiKey')
-			}
-			}).then(response => {
-        return response
-      })
-})
+				lat: latitude, // required
+				lon: longitute, // required
+				exclude: exclude, // default: null
+				units: units, // default: standard
+				appid: Cypress.env('apiKey'),
+			},
+		}).then(response => {
+			return response;
+		});
+	}
+);

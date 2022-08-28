@@ -1,22 +1,25 @@
 {
-  "name": "apitestopenweathermap",
-  "description": "framework to test api calls to openweathermap ",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "npx cypress open --e2e --browser chrome"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rodrigovolkmer/apiTestOpenWeatherMap.git"
-  },
-  "author": "RV",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/rodrigovolkmer/apiTestOpenWeatherMap/issues"
-  },
-  "homepage": "https://github.com/rodrigovolkmer/apiTestOpenWeatherMap#readme",
-  "devDependencies": {
-    "cypress": "^10.6.0"
-  }
+	"name": "apitestopenweathermap",
+	"description": "framework to test api calls to openweathermap ",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"test": "npx cypress open --e2e --browser chrome",
+		"headless": "npx cypress run --e2e --browser chrome",
+		"prettier": "prettier --write --loglevel warn \"**/**/*.js\" \"**/**/*.json\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/rodrigovolkmer/apiTestOpenWeatherMap.git"
+	},
+	"author": "RV",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/rodrigovolkmer/apiTestOpenWeatherMap/issues"
+	},
+	"homepage": "https://github.com/rodrigovolkmer/apiTestOpenWeatherMap#readme",
+	"devDependencies": {
+		"cypress": "^10.6.0",
+		"prettier": "^2.7.1"
+	}
 }
