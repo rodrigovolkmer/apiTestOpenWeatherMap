@@ -12,7 +12,7 @@ That being said, there are a lot of different types of data that returns from th
 
 Clone this repository on your favorite IDE:
 ```
-https://github.com/rodrigovolkmer/apiTestOpenWeatherMap.git
+git clone https://github.com/rodrigovolkmer/apiTestOpenWeatherMap.git
 ```
 and install:
 ```
